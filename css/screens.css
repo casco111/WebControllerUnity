@@ -1,0 +1,43 @@
+/* Spezielles Layout für das Autospiel */
+.car-controls-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Zwei Spalten: Links Lenken, Rechts Pedale */
+    gap: 30px;
+    width: 100%;
+    max-width: 600px;
+    padding: 20px;
+}
+
+.steering-group, .pedal-group {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.ctrl-btn {
+    height: 120px;
+    width: 100% !important; /* Überschreibt Standardbreite */
+    font-size: 1.2rem;
+    border-radius: 15px;
+    background: #444;
+}
+
+/* Farben für die Pedale */
+.gas { background: #28a745 !important; height: 160px; } /* Größerer Button für Gas */
+.brake { background: #dc3545 !important; }
+
+/* Quit Button Styling */
+.controller-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin-bottom: 20px;
+}
+
+.quit-btn {
+    width: auto !important;
+    padding: 10px 20px !important;
+    font-size: 1rem !important;
+    background: #6c757d !important;
+}

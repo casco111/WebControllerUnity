@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Unity Controller</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/screens.css">
+</head>
+
+<body>
+
+    <div id="status-bar">Status: Getrennt</div>
+
+    <section id="screen-login" class="screen active">
+        <h2>Mit PC verbinden</h2>
+        <input type="text" id="ipInput" placeholder="IP Adresse" value="192.168.0.55">
+        <button onclick="connect()">VERBINDEN</button>
+    </section>
+
+    <section id="screen-lobby" class="screen">
+        <h2>Warte auf Spielstart...</h2>
+        <p>Du bist verbunden.</p>
+        <div class="loader"></div>
+    </section>
+
+    <section id="screen-car-game" class="screen">
+        <div class="controller-header">
+            <h2>Racing Mode</h2>
+            <button class="quit-btn" onclick="sendAction('quit')">EXIT</button>
+        </div>
+
+        <div class="car-controls-grid">
+    <div class="steering-group">
+        <button class="ctrl-btn" onpointerdown="sendStringAction('left_pressed')" onpointerup="sendStringAction('left_released')">◀</button>
+        <button class="ctrl-btn" onpointerdown="sendStringAction('right_pressed')" onpointerup="sendStringAction('right_released')">▶</button>
+    </div>
+
+    <div class="pedal-group">
+        <button class="ctrl-btn gas" onpointerdown="sendStringAction('forward_pressed')" onpointerup="sendStringAction('forward_released')">GAS</button>
+        <button class="ctrl-btn brake" onpointerdown="sendStringAction('backward_pressed')" onpointerup="sendStringAction('backward_released')">REVERSE</button>
+    </div>
+</div>
+    </section>
+
+    <section id="screen-game-quiz" class="screen">
+        <h2>Quiz Modus</h2>
+        <div class="grid-controller">
+            <button onclick="sendAction('A')" style="background: #dc3545;">A</button>
+            <button onclick="sendAction('B')" style="background: #ffc107;">B</button>
+        </div>
+    </section>
+
+    <div id="status-bar">Status: Getrennt</div>
+
+    <script src="js/network.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

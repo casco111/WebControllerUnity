@@ -1,0 +1,45 @@
+ /* Grunddesign */
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            background: #1a1a1a;
+            color: white;
+            overflow: hidden; /* Verhindert Scrollen am Handy */
+            height: 100vh;
+        }
+
+        /* Container für alle Fenster */
+        .screen {
+            display: none; /* Standardmäßig unsichtbar */
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            width: 100vw;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        /* Das aktive Fenster anzeigen */
+        .screen.active {
+            display: flex;
+        }
+
+        /* Styling für Inputs & Buttons */
+        input { padding: 15px; margin: 10px; width: 80%; border-radius: 8px; border: none; font-size: 1.1rem; }
+        button { 
+            padding: 20px; margin: 10px; width: 80%; font-size: 1.5rem; font-weight: bold;
+            border-radius: 12px; border: none; background: #007bff; color: white; cursor: pointer;
+        }
+        button:active { transform: scale(0.98); background: #0056b3; }
+
+        /* Spezielle Controller-Layouts */
+        .grid-controller {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            width: 100%;
+        }
+        
+        #status-bar { position: fixed; bottom: 0; width: 100%; text-align: center; font-size: 12px; padding: 5px; color: #666; }
+    
